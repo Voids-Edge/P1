@@ -5,7 +5,7 @@ from email.mime.multipart import MIMEMultipart
 
 while True:
     email_pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'
-    sender_email = input("Please give your preferred email address: ")
+    sender_email = input("Please provide your preferred email address: ")
 
     if re.match(email_pattern, sender_email):
         print("Valid email address!")
@@ -29,10 +29,12 @@ message_text = "Hello,\n\nPlease address the following request:\n\nRequest Type:
 message.attach(MIMEText(message_text, 'plain'))
 
 # Set up your email server and authentication
-smtp_server = 'smtp.office365.com'
-smtp_port = 993
+smtp_server = 'smtp.gmail.com'
+smtp_port = 587
 email_address = 'jmwread3@gmail.com'
 email_password = 'Spacecowboy123!'
+
+server = None  # Initialize the server variable
 
 try:
     # Establish a connection with the email server
@@ -50,5 +52,7 @@ except Exception as e:
     print("Error occurred while sending the email:", str(e))
 
 finally:
-    # Close the connection
-    server.quit()
+    if server is not None:  # Check if the server variable is defined
+        # Close the connection
+        server.quit()
+        

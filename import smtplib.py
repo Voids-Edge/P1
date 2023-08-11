@@ -30,7 +30,7 @@ message.attach(MIMEText(message_text, 'plain'))
 
 # Set up your email server and authentication
 smtp_server = 'smtp.gmail.com'
-smtp_port = 587
+smtp_port = 465
 email_address = 'jmwread3@gmail.com'
 email_password = 'Spacecowboy123!'
 

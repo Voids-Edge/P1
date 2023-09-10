@@ -3,7 +3,7 @@ import ssl
 import smtplib
 
 email_sender = 'jmwread3@gmail.com'
-email_password = 'flydttavbhqlmosb'
+email_password = 'kwmvraeuwzqobpwi'
 
 email_reciever = 'jmwread3@gmail.com'
 
